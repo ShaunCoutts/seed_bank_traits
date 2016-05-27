@@ -12,11 +12,6 @@ disp <- read.csv('/home/shauncoutts/Dropbox/projects/seed_bank/DispersalDistance
 d_spp <- as.character(disp$Species)
 overlap_disp <- d_spp[d_spp %in%  overlap] #43 spp overlap
 
-
-#Black grass seed bank
-sb[grepl('Alopecurus myosuroides', sb$Species), ]
-#Information extracted from seed bank data base to look at black grass seed banks 
-
 #interpriting seed longevity codes
 # 1: seeds survive <1 year
 # 2: seeds surviv >1 and <5 years
