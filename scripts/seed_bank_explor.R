@@ -1,16 +1,12 @@
 #seed bank overlap
 sb <- read.csv('/home/shauncoutts/Dropbox/projects/seed_bank/SEEDBANK.CSV', header = T)
-ob_name <- load("/home/shauncoutts/Dropbox/projects/COMPADRE_spatial_replication/Data/Demography/Rlease_version/COMPADRE Jul 21 2014.RData")
 
-comp_spp <- unique(gsub('_', x = compadre$metadata$SpeciesAccepted, ' '))
 sb_spp <- unique(as.character(sb$Species))
-
-overlap <- comp_spp[comp_spp %in% sb_spp ] # 92 spp overlap
 
 #dispersal data
 disp <- read.csv('/home/shauncoutts/Dropbox/projects/seed_bank/DispersalDistanceData.csv', header = TRUE) 
 d_spp <- as.character(disp$Species)
-overlap_disp <- d_spp[d_spp %in%  overlap] #43 spp overlap
+overlap_disp <- d_spp[d_spp %in%  sb_spp] 
 
 #interpriting seed longevity codes
 # 1: seeds survive <1 year
